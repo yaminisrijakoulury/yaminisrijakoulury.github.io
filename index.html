@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Yamini Srija Koulury | Data Science Portfolio</title>
+  <meta name="description" content="Engineering Data into Real-World Impact — Analytics, Cloud, Embedded Systems & Research. Portfolio of Yamini Srija Koulury." />
+  <meta name="author" content="Yamini Srija Koulury" />
+  <meta property="og:title" content="Yamini Srija Koulury | Data Science Portfolio" />
+  <meta property="og:description" content="Engineering Data into Real-World Impact — Analytics | Cloud | Embedded Systems | Research" />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css?v=7" />
+</head>
+<body>
+  <div id="cursor-glow"></div>
+  <canvas id="particles-canvas"></canvas>
+
+  <!-- Navigation -->
+  <nav id="navbar">
+    <div class="nav-container">
+      <a href="#home" class="nav-logo">YS<span class="accent">.</span></a>
+      <div class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#experience">Experience</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#education">Education</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+        <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+
+      <button id="mobile-menu-btn" class="mobile-menu-btn" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-nav" id="mobile-nav">
+      <a href="#home">Home</a>
+      <a href="#experience">Experience</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#education">Education</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <main id="main">
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+      <div class="hero-content">
+        <p class="hero-greeting animate-in">Hi, I'm</p>
+        <h1 class="hero-name animate-in delay-1">YAMINI SRIJA KOULURY</h1>
+        <p class="hero-tagline animate-in delay-2">Transforming <span class="accent">Data</span> into Smarter Solutions</p>
+        <p class="hero-description animate-in delay-3">
+          Engineering data into real-world impact across analytics, cloud computing, embedded systems, and research — with a passion for building intelligent, scalable solutions.
+        </p>
+        <div class="hero-buttons animate-in delay-4">
+          <a href="#contact" class="btn btn-primary">Get in Touch</a>
+          <a href="#projects" class="btn btn-secondary">View Projects</a>
+          <a href="Resume_YaminiSrija_Koulury.pdf" download class="btn btn-resume">⬇ Download Resume</a>
+        </div>
+      </div>
+      <div class="hero-visual animate-in delay-3">
+        <div class="hero-orb"></div>
+        <div class="hero-orb hero-orb-2"></div>
+        <div class="hero-orb hero-orb-3"></div>
+      </div>
+      <div class="scroll-indicator animate-in delay-4">
+        <div class="scroll-line"></div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section about-section">
+      <div class="container">
+        <h2 class="section-title" data-animate>About Me</h2>
+        <div class="about-grid" data-animate>
+          <div class="about-photo">
+            <img src="DSC_0473.JPG" alt="Yamini Srija Koulury" />
+          </div>
+          <div class="about-text">
+            <p>I'm a Master's student in Data Science at Indiana University, passionate about using data to solve real-world challenges. My interests span optimizing supply chains, building ML-driven healthcare solutions, and uncovering insights through advanced analytics.</p>
+            <p>My background in computer science and hands-on experience with 3D firmware, APIs, and AWS cloud solutions gives me a unique edge in data-driven product engineering. I thrive at the intersection of research and practical implementation.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="section experience-section">
+      <div class="container">
+        <h2 class="section-title" data-animate>My Journey</h2>
+        <div class="timeline" data-animate>
+
+          <div class="timeline-item">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content glass-card">
+              <div class="timeline-header">
+                <div>
+                  <h3>Indiana University</h3>
+                  <p class="timeline-role">Teaching Assistant — Social & Ethical Impacts of Big Data</p>
+                </div>
+                <div class="timeline-meta">
+                  <span class="timeline-date">Jan 2026 – May 2026</span>
+                  <span class="timeline-location">Bloomington, Indiana</span>
+                </div>
+              </div>
+              <ul class="timeline-bullets">
+                <li>Guided students through critical analysis of data ethics, privacy, algorithmic bias, and the societal implications of large-scale data systems.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content glass-card">
+              <div class="timeline-header">
+                <div>
+                  <h3>Ikabit Inc.</h3>
+                  <p class="timeline-role">Software Engineer (Data) · Internship</p>
+                </div>
+                <div class="timeline-meta">
+                  <span class="timeline-date">Jun 2025 – Aug 2025</span>
+                  <span class="timeline-location">Sacramento, California</span>
+                </div>
+              </div>
+              <ul class="timeline-bullets">
+                <li>Contributed to data engineering initiatives, building scalable data pipelines and infrastructure for enterprise data products.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content glass-card">
+              <div class="timeline-header">
+                <div>
+                  <h3>Emirates Steel Arkan (EMSTEEL)</h3>
+                  <p class="timeline-role">Data Analytics Intern</p>
+                </div>
+                <div class="timeline-meta">
+                  <span class="timeline-date">Mar 2024 – Jul 2024</span>
+                  <span class="timeline-location">Abu Dhabi, UAE · Hybrid</span>
+                </div>
+              </div>
+              <ul class="timeline-bullets">
+                <li>Delivered data analytics insights across IT Integration, Project Management, and AI domains</li>
+                <li>Worked with SAP ERP systems to support data-driven decision making in steel manufacturing</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content glass-card">
+              <div class="timeline-header">
+                <div>
+                  <h3>3rdEyeLabs.io</h3>
+                  <p class="timeline-role">Data Engineer · Full-time</p>
+                </div>
+                <div class="timeline-meta">
+                  <span class="timeline-date">Dec 2023 – Feb 2024</span>
+                  <span class="timeline-location">Abu Dhabi, UAE</span>
+                </div>
+              </div>
+              <ul class="timeline-bullets">
+                <li>Engineered data pipelines and firmware solutions using C++ and Autodesk Fusion 360</li>
+                <li>Worked on embedded systems and 3D printing data infrastructure</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content glass-card">
+              <div class="timeline-header">
+                <div>
+                  <h3>New York University</h3>
+                  <p class="timeline-role">Data Science Research Intern</p>
+                </div>
+                <div class="timeline-meta">
+                  <span class="timeline-date">Sep 2023 – Dec 2023</span>
+                  <span class="timeline-location">Abu Dhabi, UAE · Hybrid</span>
+                </div>
+              </div>
+              <ul class="timeline-bullets">
+                <li>Conducted data science research projects at NYU Abu Dhabi, applying advanced analytics and machine learning techniques to real-world datasets.</li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section skills-section">
+      <div class="container">
+        <h2 class="section-title" data-animate>My Skillset</h2>
+        <div class="skills-grid" data-animate>
+
+          <div class="skill-category glass-card">
+            <h3>Programming Languages</h3>
+            <div class="skill-tags">
+              <span class="skill-tag">Python</span>
+              <span class="skill-tag">SQL</span>
+              <span class="skill-tag">R</span>
+              <span class="skill-tag">C++</span>
+              <span class="skill-tag">Java</span>
+              <span class="skill-tag">JavaScript</span>
+              <span class="skill-tag">TypeScript</span>
+              <span class="skill-tag">HTML</span>
+              <span class="skill-tag">CSS</span>
+            </div>
+          </div>
+
+          <div class="skill-category glass-card">
+            <h3>Data Science & ML</h3>
+            <div class="skill-tags">
+              <span class="skill-tag">ML</span>
+              <span class="skill-tag">Scikit-learn</span>
+              <span class="skill-tag">TensorFlow</span>
+              <span class="skill-tag">PyTorch</span>
+              <span class="skill-tag">Pandas</span>
+              <span class="skill-tag">NumPy</span>
+              <span class="skill-tag">Data Mining</span>
+              <span class="skill-tag">SVM</span>
+              <span class="skill-tag">Predictive Models</span>
+              <span class="skill-tag">Random Forest</span>
+            </div>
+          </div>
+
+          <div class="skill-category glass-card">
+            <h3>Data Visualization</h3>
+            <div class="skill-tags">
+              <span class="skill-tag">Tableau</span>
+              <span class="skill-tag">Power BI</span>
+              <span class="skill-tag">Matplotlib</span>
+              <span class="skill-tag">Seaborn</span>
+              <span class="skill-tag">Plotly</span>
+              <span class="skill-tag">Jupyter Notebook</span>
+              <span class="skill-tag">MS Excel</span>
+              <span class="skill-tag">Data Storytelling</span>
+            </div>
+          </div>
+
+          <div class="skill-category glass-card">
+            <h3>Cloud & DevOps</h3>
+            <div class="skill-tags">
+              <span class="skill-tag">AWS</span>
+              <span class="skill-tag">EC2</span>
+              <span class="skill-tag">ECR</span>
+              <span class="skill-tag">App Runner</span>
+              <span class="skill-tag">Docker</span>
+              <span class="skill-tag">Linux</span>
+              <span class="skill-tag">Cloud Computing</span>
+              <span class="skill-tag">SAP Integration</span>
+            </div>
+          </div>
+
+          <div class="skill-category glass-card">
+            <h3>Tools & Technologies</h3>
+            <div class="skill-tags">
+              <span class="skill-tag">Git</span>
+              <span class="skill-tag">APIs</span>
+              <span class="skill-tag">Shell Scripting</span>
+              <span class="skill-tag">Agile</span>
+              <span class="skill-tag">Fusion 360</span>
+              <span class="skill-tag">Data Scraping</span>
+              <span class="skill-tag">Python Automation</span>
+            </div>
+          </div>
+
+          <div class="skill-category glass-card">
+            <h3>Embedded Systems</h3>
+            <div class="skill-tags">
+              <span class="skill-tag">Klipper</span>
+              <span class="skill-tag">Marlin</span>
+              <span class="skill-tag">3D Printer Firmware</span>
+              <span class="skill-tag">Embedded LED Matrix</span>
+              <span class="skill-tag">Sensor Deployment</span>
+              <span class="skill-tag">Device Optimization</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section projects-section">
+      <div class="container">
+        <h2 class="section-title" data-animate>Featured Projects</h2>
+        <div class="projects-grid" data-animate>
+
+          <a href="https://github.iu.edu/ykoulury/ykoulury-Analyzing-and-Visualizing-Human-Reference-Atlas-HRA-UI-Usage" target="_blank" class="project-card glass-card" data-num="01">
+            <div class="project-number">01</div>
+            <h3>Analyzing & Visualizing HRA UI Usage</h3>
+            <p>Processed 120K+ log records (665MB) by architecting a scalable analytics pipeline using AWS EC2 to parse CloudFront logs. Designed interactive dashboards visualizing session data with Matplotlib and Seaborn.</p>
+            <div class="project-tags">
+              <span>AWS</span><span>Pandas</span><span>NumPy</span><span>Matplotlib</span><span>Seaborn</span>
+            </div>
+
+          </a>
+
+          <a href="https://github.iu.edu/ykoulury/InfoViz_ykoulury" target="_blank" class="project-card glass-card" data-num="02">
+            <div class="project-number">02</div>
+            <h3>Safer Routes via Accident Analysis</h3>
+            <p>Spatial analysis of 7.7M US accident records using DBSCAN clustering, heatmaps, and custom risk scores to engineer a safety-aware routing system over OpenStreetMap data.</p>
+            <div class="project-tags">
+              <span>Python</span><span>DBSCAN</span><span>OpenStreetMap</span><span>Data Science</span>
+            </div>
+          </a>
+
+          <a href="https://github.iu.edu/ykoulury/Advance-ML-and-Visualizations" target="_blank" class="project-card glass-card" data-num="03">
+            <div class="project-number">03</div>
+            <h3>IPL — Beyond the Numbers</h3>
+            <p>Explored hidden narratives within the Indian Premier League using ball-by-ball data and brand valuation datasets. Visualization with rose charts, violin plots, chord diagrams, and bubble charts.</p>
+            <div class="project-tags">
+              <span>Data Storytelling</span><span>Advanced Viz</span><span>Brand Analysis</span>
+            </div>
+          </a>
+
+          <a href="#" class="project-card glass-card" data-num="04">
+            <div class="project-number">04</div>
+            <h3>Alzheimer's Diagnosis Modeling</h3>
+            <p>Advanced predictive modeling on OASIS dataset using ensemble methods with SHAP explainability for medical professionals. Achieved 93% accuracy with clinical validation.</p>
+            <div class="project-tags">
+              <span>Python</span><span>SHAP</span><span>XGBoost</span><span>SVM</span><span>Jupyter</span>
+            </div>
+          </a>
+
+          <a href="#" class="project-card glass-card" data-num="05">
+            <div class="project-number">05</div>
+            <h3>Medicine Recommendation System</h3>
+            <p>NLP-powered cloud service on AWS with Dockerized deployment for intelligent pharmaceutical recommendations. Scalable architecture with App Runner.</p>
+            <div class="project-tags">
+              <span>NLP</span><span>AWS EC2</span><span>Docker</span><span>Python</span><span>App Runner</span>
+            </div>
+          </a>
+
+          <a href="#" class="project-card glass-card" data-num="06">
+            <div class="project-number">06</div>
+            <h3>AI-Based Natural Disaster Analysis</h3>
+            <p>IBM Watson-powered AI models for natural disaster event prediction and analysis. Built during IBM externship program for real-time analysis.</p>
+            <div class="project-tags">
+              <span>IBM Watson</span><span>Python</span><span>Data Engineering</span><span>AI/ML</span>
+            </div>
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="section education-section">
+      <div class="container">
+        <h2 class="section-title" data-animate>Education & Honors</h2>
+        <div class="education-grid" data-animate>
+
+          <div class="education-card glass-card">
+            <div class="edu-icon">🎓</div>
+            <h3>Indiana University Bloomington</h3>
+            <p class="edu-degree">Master of Science in Data Science</p>
+            <p class="edu-date">2024 – 2026</p>
+            <p class="edu-coursework"><strong>Coursework:</strong> Applied Database Technologies, Social Media Mining, Information Visualization, Usable AI, Data Mining, Statistics, Cloud Computing, HCI</p>
+          </div>
+
+          <div class="education-card glass-card">
+            <div class="edu-icon">🎓</div>
+            <h3>Manipal Academy of Higher Education</h3>
+            <p class="edu-degree">Bachelor of Technology in Computer Science (AI)</p>
+            <p class="edu-date">2019 – 2023</p>
+            <p class="edu-location">Dubai</p>
+          </div>
+
+          <div class="education-card glass-card award-card">
+            <div class="edu-icon">🏆</div>
+            <h3>Best Paper Award</h3>
+            <p class="edu-degree">7th International Student Research Colloquium on AEIT</p>
+            <p class="edu-date">May 2022 · Manipal University Dubai</p>
+            <p class="edu-coursework">Life Expectancy — Exploratory Data Analysis using Jupyter Notebook and Excel</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section contact-section">
+      <div class="container">
+        <h2 class="section-title" data-animate>Get In Touch</h2>
+        <p class="contact-subtitle" data-animate>I am open to data science, data engineering, machine learning, and analytics opportunities where I can help build scalable, thoughtful systems!</p>
+        <div class="contact-grid" data-animate>
+          <a href="mailto:yaminisrija16@gmail.com" class="contact-card glass-card">
+            <span class="contact-icon">✉️</span>
+            <span class="contact-label">Email</span>
+            <span class="contact-value">yaminisrija16@gmail.com</span>
+          </a>
+          <a href="https://linkedin.com/in/srija06" target="_blank" class="contact-card glass-card">
+            <span class="contact-icon"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></span>
+            <span class="contact-label">LinkedIn</span>
+            <span class="contact-value">linkedin.com/in/srija06</span>
+          </a>
+          <a href="https://github.com" target="_blank" class="contact-card glass-card">
+            <span class="contact-icon"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></span>
+            <span class="contact-label">GitHub</span>
+            <span class="contact-value">github.com</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>&copy; 2026 Yamini Srija Koulury. Built with passion.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
