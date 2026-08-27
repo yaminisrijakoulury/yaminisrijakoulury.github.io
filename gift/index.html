@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>For You, My Love 💕</title>
+  <meta name="description" content="A little garden of greeting cards, made with love. Each one opens to a new message, a new celebration." />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Dancing+Script:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- Floating Hearts Background -->
+  <div class="floating-hearts" id="floatingHearts" aria-hidden="true">
+  </div>
+
+  <div class="gift-page">
+
+    <!-- Hero Section -->
+    <header class="hero" id="hero">
+      <p class="hero-subtitle">a little gift, for you</p>
+      <h1 class="hero-title">For You, <em>My Love</em></h1>
+      <p class="hero-description">
+        I made you a little garden of greeting cards. Each one opens to a new message, a new celebration, a new way to say what I feel for you every day. Take your time. Open one. Open all of them. They're yours.
+      </p>
+      <div class="card-count-divider">
+        <span class="line"></span>
+        <span class="count-text">12 cards to open</span>
+        <span class="line"></span>
+      </div>
+    </header>
+
+    <!-- Cards Grid -->
+    <section class="cards-section" id="cards">
+      <div class="cards-grid" id="cardsGrid">
+        <!-- Cards injected by JavaScript -->
+      </div>
+    </section>
+
+    <!-- Closing Section -->
+    <section class="closing-section">
+      <div class="closing-divider"></div>
+      <h2 class="closing-title">and a thousand more I haven't written yet</h2>
+      <p class="closing-text">Every card here is true. Every one was you, on my mind.</p>
+      <span class="closing-heart">♥</span>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <p class="footer-text">made with love, only for you</p>
+    </footer>
+
+  </div>
+
+  <!-- Modal Overlay -->
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal-card" id="modalCard">
+      <div class="modal-sparkles" aria-hidden="true">
+        <span class="modal-sparkle"></span>
+        <span class="modal-sparkle"></span>
+        <span class="modal-sparkle"></span>
+        <span class="modal-sparkle"></span>
+        <span class="modal-sparkle"></span>
+      </div>
+      <button class="modal-close" id="modalClose" aria-label="Close card">&times;</button>
+      <div class="modal-envelope" id="modalEnvelope"></div>
+      <p class="modal-category" id="modalCategory"></p>
+      <h2 class="modal-title" id="modalTitle"></h2>
+      <p class="modal-tagline" id="modalTagline"></p>
+      <div class="modal-divider"></div>
+      <p class="modal-message" id="modalMessage"></p>
+      <p class="modal-sign-off" id="modalSignOff"></p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
