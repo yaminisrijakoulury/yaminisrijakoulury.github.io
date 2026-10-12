@@ -1,184 +1,53 @@
-/* ═══════════════════════════════════════════════════
-   PARTICLES BACKGROUND
-   ═══════════════════════════════════════════════════ */
-const canvas = document.getElementById('particles-canvas');
-const ctx = canvas.getContext('2d');
-let particles = [];
-let animationId;
-
-function getParticleColor() {
-  return getComputedStyle(document.documentElement).getPropertyValue('--particle-color').trim();
-}
-
-function resizeCanvas() {
-  canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight;
-}
-resizeCanvas();
-window.addEventListener('resize', resizeCanvas);
-
-class Particle {
-  constructor() {
-    this.reset();
+const projects = {
+  returnminder: {
+    category: '01 / AI APPLICATION', title: 'ReturnMinder', intro: 'A return deadline tracker that turns receipts into organized purchases and timely reminders.',
+    metric: '7 days + 1 day', metricLabel: 'Reminder intervals before a return deadline',
+    goal: 'Make purchase and return tracking easier, without manually copying every detail from a receipt.',
+    work: ['Connected Gmail receipt events through Google Cloud Pub/Sub to a Node.js backend, with Gemini extracting products, return policies, and deadlines.', 'Built receipt-photo extraction with editable results in a Next.js dashboard and purchase storage in Firestore.', 'Scheduled background checks and automated email reminders with links back to the purchase dashboard.'],
+    stack: ['Next.js', 'Node.js', 'Gemini', 'Firestore', 'Google Cloud Pub/Sub']
+  },
+  courselect: {
+    category: '02 / AGENTIC AI', title: 'CourSelect', intro: 'An AI academic advising platform that connects semantic course search with persistent agent memory.',
+    metric: '8,983', metricLabel: 'Courses searchable with responses under 3 seconds',
+    goal: 'Help students navigate a large course catalog while respecting major-specific enrollment requirements.',
+    work: ['Implemented vector embeddings and two-level caching on CockroachDB for semantic course search.', 'Designed a four-tier LLM fallback architecture across Gemini, local Ollama models, and Mistral Cloud.', 'Built a five-tier agentic memory system supporting enrollment logic across 242 departments.', 'Deployed the Flask backend on AWS EC2 and stored structured session reports in S3 for auditing and reliable recommendation history.'],
+    stack: ['Python', 'Flask', 'AWS', 'CockroachDB', 'Vector embeddings', 'Agentic workflows']
+  },
+  hra: {
+    category: '03 / DATA ENGINEERING', title: 'Human Reference Atlas', intro: 'Analyzing and visualizing HRA interface usage to understand how people explore scientific resources.',
+    metric: '120K+', metricLabel: 'Log records processed across 665 MB of data',
+    goal: 'Uncover dominant user workflows and underused components to inform documentation improvements.',
+    work: ['Architected an AWS EC2 analytics pipeline to parse CloudFront logs with Pandas and NumPy.', 'Built an ETL workflow to clean raw logs and produce structured outputs for dashboard reporting.', 'Visualized sessions and high-demand Knowledge Graph resources through interactive dashboards and Matplotlib / Seaborn analysis.'],
+    stack: ['Python', 'Pandas', 'NumPy', 'Plotly', 'AWS EC2'],
+    url: 'https://github.iu.edu/ykoulury/ykoulury-Analyzing-and-Visualizing-Human-Reference-Atlas-HRA-UI-Usage'
+  },
+  ipl: {
+    category: '04 / ML & VISUALIZATION', title: 'The Untold Stories of IPL', intro: 'Exploring cricket performance, player consistency, and brand value beyond championship counts.',
+    metric: 'Beyond title counts', metricLabel: 'A closer look at performance and brand value',
+    goal: 'Turn aggregate cricket statistics into understandable stories and investigate the drivers of team and player performance.',
+    work: ['Modeled relationships between competitive win percentages and brand value using predictive modeling, SVM, and Random Forest.', 'Used SHAP for model explainability and NLP for textual analysis.', 'Created advanced visualizations, including rose charts, in Power BI and Tableau to communicate player consistency and performance narratives.'],
+    stack: ['Python', 'Scikit-learn', 'SHAP', 'Power BI', 'Tableau'],
+    url: 'https://github.iu.edu/ykoulury/Advance-ML-and-Visualizations'
   }
-  reset() {
-    this.x = Math.random() * canvas.width;
-    this.y = Math.random() * canvas.height;
-    this.size = Math.random() * 1.8 + 0.3;
-    this.speedX = (Math.random() - 0.5) * 0.4;
-    this.speedY = (Math.random() - 0.5) * 0.4;
-    this.opacity = Math.random() * 0.4 + 0.1;
-  }
-  update() {
-    this.x += this.speedX;
-    this.y += this.speedY;
-    if (this.x < 0 || this.x > canvas.width) this.speedX *= -1;
-    if (this.y < 0 || this.y > canvas.height) this.speedY *= -1;
-  }
-  draw() {
-    const pc = getParticleColor();
-    ctx.beginPath();
-    ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-    ctx.fillStyle = `rgba(${pc}, ${this.opacity})`;
-    ctx.fill();
-  }
-}
-
-function initParticles() {
-  const count = Math.min(80, Math.floor(window.innerWidth / 15));
-  particles = Array.from({ length: count }, () => new Particle());
-}
-
-function connectParticles() {
-  for (let i = 0; i < particles.length; i++) {
-    for (let j = i + 1; j < particles.length; j++) {
-      const dx = particles[i].x - particles[j].x;
-      const dy = particles[i].y - particles[j].y;
-      const dist = Math.sqrt(dx * dx + dy * dy);
-      if (dist < 120) {
-        const pc = getParticleColor();
-        ctx.beginPath();
-        ctx.strokeStyle = `rgba(${pc}, ${0.06 * (1 - dist / 120)})`;
-        ctx.lineWidth = 0.5;
-        ctx.moveTo(particles[i].x, particles[i].y);
-        ctx.lineTo(particles[j].x, particles[j].y);
-        ctx.stroke();
-      }
-    }
-  }
-}
-
-function animateParticles() {
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
-  particles.forEach(p => { p.update(); p.draw(); });
-  connectParticles();
-  animationId = requestAnimationFrame(animateParticles);
-}
-
-initParticles();
-animateParticles();
-
-/* ═══════════════════════════════════════════════════
-   CURSOR GLOW
-   ═══════════════════════════════════════════════════ */
-const cursorGlow = document.getElementById('cursor-glow');
-let mouseX = 0, mouseY = 0, glowX = 0, glowY = 0;
-
-document.addEventListener('mousemove', (e) => {
-  mouseX = e.clientX;
-  mouseY = e.clientY;
-});
-
-function animateCursorGlow() {
-  glowX += (mouseX - glowX) * 0.08;
-  glowY += (mouseY - glowY) * 0.08;
-  cursorGlow.style.left = glowX + 'px';
-  cursorGlow.style.top = glowY + 'px';
-  requestAnimationFrame(animateCursorGlow);
-}
-animateCursorGlow();
-
-/* ═══════════════════════════════════════════════════
-   NAVBAR SCROLL
-   ═══════════════════════════════════════════════════ */
-const navbar = document.getElementById('navbar');
-window.addEventListener('scroll', () => {
-  navbar.classList.toggle('scrolled', window.scrollY > 50);
-});
-
-/* ═══════════════════════════════════════════════════
-   MOBILE MENU
-   ═══════════════════════════════════════════════════ */
-const mobileBtn = document.getElementById('mobile-menu-btn');
-const mobileNav = document.getElementById('mobile-nav');
-
-mobileBtn.addEventListener('click', () => {
-  mobileNav.classList.toggle('open');
-});
-
-mobileNav.querySelectorAll('a').forEach(link => {
-  link.addEventListener('click', () => mobileNav.classList.remove('open'));
-});
-
-/* ═══════════════════════════════════════════════════
-   SCROLL ANIMATIONS (Intersection Observer)
-   ═══════════════════════════════════════════════════ */
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-    }
+};
+const dialog = document.querySelector('#project-dialog');
+const content = document.querySelector('#project-content');
+let trigger;
+for (const button of document.querySelectorAll('[data-project]')) {
+  button.addEventListener('click', () => {
+    const project = projects[button.dataset.project];
+    trigger = button;
+    content.innerHTML = `<p class="eyebrow">${project.category}</p><h2 id="project-title">${project.title}</h2><p>${project.intro}</p><div class="project-stat"><strong>${project.metric}</strong><span>${project.metricLabel}</span></div><h3>The goal</h3><p>${project.goal}</p><h3>What I built</h3><ul>${project.work.map(item => `<li>${item}</li>`).join('')}</ul><div class="tags">${project.stack.map(item => `<span>${item}</span>`).join('')}</div><div class="project-links">${project.url ? `<a class="pill-button dark" href="${project.url}" target="_blank" rel="noopener noreferrer">Explore repository ↗</a>` : ''}<a class="pill-button dark" href="mailto:yaminisrija16@gmail.com?subject=${encodeURIComponent(`Tell me more about ${project.title}`)}">Let’s talk about this project ↗</a></div>${project.url ? '<p class="access-note">Hosted on Indiana University GitHub; university access may be required.</p>' : ''}`;
+    dialog.showModal();
+    document.body.classList.add('modal-open');
   });
-}, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
-
-document.querySelectorAll('[data-animate]').forEach(el => observer.observe(el));
-
-/* ═══════════════════════════════════════════════════
-   ACTIVE NAV LINK HIGHLIGHT
-   ═══════════════════════════════════════════════════ */
-const sections = document.querySelectorAll('section[id]');
-const navLinks = document.querySelectorAll('.nav-links a');
-
-window.addEventListener('scroll', () => {
-  let current = '';
-  sections.forEach(section => {
-    const top = section.offsetTop - 120;
-    if (window.scrollY >= top) current = section.getAttribute('id');
-  });
-  navLinks.forEach(link => {
-    link.style.color = link.getAttribute('href') === '#' + current
-      ? 'var(--accent)' : '';
-  });
-});
-
-/* ═══════════════════════════════════════════════════
-   SMOOTH SCROLL FOR ANCHORS
-   ═══════════════════════════════════════════════════ */
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function(e) {
-    e.preventDefault();
-    const target = document.querySelector(this.getAttribute('href'));
-    if (target) target.scrollIntoView({ behavior: 'smooth' });
-  });
-});
-
-/* ═══════════════════════════════════════════════════
-   THEME TOGGLE (Dark / Light)
-   ═══════════════════════════════════════════════════ */
-const themeToggle = document.getElementById('theme-toggle');
-const savedTheme = localStorage.getItem('portfolio-theme');
-
-if (savedTheme) {
-  document.documentElement.setAttribute('data-theme', savedTheme);
 }
-
-themeToggle.addEventListener('click', () => {
-  const current = document.documentElement.getAttribute('data-theme');
-  const next = current === 'light' ? 'dark' : 'light';
-  if (next === 'dark') {
-    document.documentElement.removeAttribute('data-theme');
-  } else {
-    document.documentElement.setAttribute('data-theme', next);
-  }
-  localStorage.setItem('portfolio-theme', next);
+document.querySelector('.close-dialog').addEventListener('click', () => dialog.close());
+dialog.addEventListener('click', event => {
+  const bounds = dialog.getBoundingClientRect();
+  if (event.target === dialog && (event.clientX < bounds.left || event.clientX > bounds.right || event.clientY < bounds.top || event.clientY > bounds.bottom)) dialog.close();
+});
+dialog.addEventListener('close', () => {
+  document.body.classList.remove('modal-open');
+  trigger?.focus({preventScroll: true});
 });
