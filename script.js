@@ -1,13 +1,13 @@
 const projects = {
-  returnminder: {
-    category: '01 / AI APPLICATION', title: 'ReturnMinder', intro: 'A return deadline tracker that turns receipts into organized purchases and timely reminders.',
+  returnradar: {
+    category: '02 / AI APPLICATION', title: 'Return Radar', intro: 'A return deadline tracker that turns receipts into organized purchases and timely reminders.',
     metric: '7 days + 1 day', metricLabel: 'Reminder intervals before a return deadline',
     goal: 'Make purchase and return tracking easier, without manually copying every detail from a receipt.',
     work: ['Connected Gmail receipt events through Google Cloud Pub/Sub to a Node.js backend, with Gemini extracting products, return policies, and deadlines.', 'Built receipt-photo extraction with editable results in a Next.js dashboard and purchase storage in Firestore.', 'Scheduled background checks and automated email reminders with links back to the purchase dashboard.'],
     stack: ['Next.js', 'Node.js', 'Gemini', 'Firestore', 'Google Cloud Pub/Sub']
   },
   courselect: {
-    category: '02 / AGENTIC AI', title: 'CourSelect', intro: 'An AI academic advising platform that connects semantic course search with persistent agent memory.',
+    category: '01 / AGENTIC AI', title: 'CourSelect', intro: 'An AI academic advising platform that connects semantic course search with persistent agent memory.',
     metric: '8,983', metricLabel: 'Courses searchable with responses under 3 seconds',
     goal: 'Help students navigate a large course catalog while respecting major-specific enrollment requirements.',
     work: ['Implemented vector embeddings and two-level caching on CockroachDB for semantic course search.', 'Designed a four-tier LLM fallback architecture across Gemini, local Ollama models, and Mistral Cloud.', 'Built a five-tier agentic memory system supporting enrollment logic across 242 departments.', 'Deployed the Flask backend on AWS EC2 and stored structured session reports in S3 for auditing and reliable recommendation history.'],
