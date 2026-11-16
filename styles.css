@@ -279,7 +279,7 @@ h3 {
   display:grid;
   grid-template-columns:repeat(3,1fr);
   column-gap:36px;
-  row-gap:0;
+  row-gap:28px;
 }
 .skill-grid article {
   display:grid;
